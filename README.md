@@ -2,106 +2,117 @@
 
 ### Goal:
 
-The "Q&A Section" project aims to provide users with an interactive module that can be integrated into a website to answer frequently asked questions. The module allows for automatic responses, enabling users to quickly access information without the need for direct contact with customer support.
+The "Wikipedia Mini" project aims to provide users with a simplified version of the popular information search platform. The application allows browsing and editing encyclopedia content, enabling users to quickly access basic information on topics of interest.
 
 ### Feature Description:
 
-- **Question and Answer Database:** Stores frequently asked questions and answers, allowing easy access to information.
-- **Search Functionality:** Users can search the question database to find the information they need.
-- **Personalized Responses:** Responses can be tailored to meet the specific needs of users with dynamic content.
-- **Question Analysis:** The module analyzes new questions submitted by users and suggests adding them to the database to keep the system updated and improved.
+- **Article Search:** Users can search for information by typing keywords into the search bar.
+- **Browse Articles:** Access to different categories and articles related to topics such as science, culture, and history.
+- **Content Editing:** Ability to edit article content, allowing users to add or modify information.
+- **Edit History:** View and manage the edit history of articles to ensure data transparency and reliability.
 
-## Requirements Analysis:
+## Requirement Analysis:
 
 ### Functional Requirements:
 
-- **Q&A Database:** The system should allow the administrator to add, edit, and delete questions and answers.
-- **Search Functionality:** Users should be able to search available questions using keywords.
-- **Personalized Responses:** The content of responses can be customized depending on the user’s context.
-- **New Question Submission:** Users can submit new questions that are not yet in the database.
+- **Article Search:** Users can search for topics by entering keywords.
+- **Browse Categories:** Users can access different article categories for easier navigation through the service.
+- **Article Editing:** Users can edit existing articles, with an edit history kept for transparency.
+- **Edit History:** Ability to view previous versions of articles and undo changes if needed.
 
-### Non-Functional Requirements:
+### Non-functional Requirements:
 
-- **Responsiveness:** The module must work correctly on both mobile devices and desktop.
-- **Performance:** Responses should be delivered instantly to meet user expectations.
-- **Integration:** The module should be easy to integrate into an existing website, with the ability to adapt the style to match the website design.
+- **Performance:** The system should be responsive, providing instant access to searched content.
+- **Scalability:** The application must be scalable to handle an increasing number of users and articles.
+- **User Interface:** Clear and intuitive interface, with easy navigation between articles and categories.
 
 ## Interface Design:
 
-### Interface Sketches/Visualizations:
+### Sketches/Visualizations:
 
-- _Q&A Homepage:_ A view of frequently asked questions, with a visible search field.
-- _Search Window:_ Users can type their question, and the system will automatically suggest answers.
-- _Submit a Question Window:_ A form for users to submit new questions that will be processed by the administrator.
+- _Home Page:_ Search bar, list of popular categories, and featured articles.
+- _Article Page:_ Includes article content, edit option, and "Edit History" section.
+- _Edit Page:_ Form for modifying the article with a preview of changes.
 
 ### Site Map:
 
-- _Q&A Homepage_
-  - List of frequently asked questions
-  - Search field
-- _Submit a Question Window_
-  - Submission form for users
-  - Overview of submitted questions (for the administrator)
+- _Home Page_
+  - Search bar
+  - Categories list
+- _Article Page_
+  - Article content
+  - Edit option
+  - Edit history
+- _Edit Page_
+  - Article edit form
+  - Change preview
 
 ## System Architecture:
 
 ### Data Structure Description:
 
-The application stores data about questions and answers, including:
+The application stores data related to articles, including:
 
-- **Questions and Answers:** Contains the text of questions and their corresponding answers, with information about the date of addition and popularity.
-- **Submitted Questions:** New questions submitted by users waiting for approval by the administrator.
+- **Articles:** Stores information about content, category, and edit history.
+- **Edit History:** Data on previous versions of articles, including who made the changes and when.
 
-### Architecture Diagrams:
+### Architecture Diagram:
 
-The architecture is based on a Model-View-Controller (MVC) structure:
+The system architecture is based on the Model-View-Controller (MVC) approach:
 
-- **Model:** Manages the question and answer data.
-- **View:** Presents the Q&A section interface to the user.
-- **Controller:** Handles user queries and manages searches within the database.
+- **Model:** Handles data storage logic and processing.
+- **View:** Presents encyclopedic content to users.
+- **Controller:** Manages user interactions, such as searching and editing articles.
 
 ## Implementation:
 
 ### Technology Description:
 
-- **Frontend:** HTML, CSS, JavaScript (React.js) - for an interactive user interface.
-- **Backend:** Node.js (Express) - to handle queries and process submissions.
-- **Database:** MongoDB - to store questions, answers, and user submissions.
+- **Frontend:** HTML, CSS, JavaScript (React.js) for user interface.
+- **Backend:** Django (Python) as the framework managing server logic.
+- **Database:** PostgreSQL for storing articles, users, and edit history.
 
 ### Code Structure:
 
-- _Directories/Files:_ Separate modules for frontend, backend, and data management logic.
-- _Code Writing Style:_ Use of modularity and code reusability with appropriate comments.
+- _Directories/Files:_ Separate files for views, editing logic, and database management.
+- _Coding Style:_ Using modular patterns, readable code, and detailed comments.
 
 ## Testing:
 
-### Testing Plan:
+### Test Plan:
 
-- **Unit Tests:** Verify the correctness of search functions and adding new entries to the database.
-- **Integration Tests:** Ensure that the frontend communicates correctly with the backend.
-- **User Interface Tests:** Check the responsiveness of the interface and ease of navigation.
-- **Performance Tests:** Evaluate response speed to user queries.
+- **Unit Tests:** Check the correctness of searching, article editing, and other basic functions.
+- **Integration Tests:** Verify the cooperation of frontend and backend components.
+- **User Interface Tests:** Testing user interactions on different devices.
+- **Performance Tests:** Assess the speed of the application, especially when searching and browsing articles.
 
 ### Testing Procedures:
 
-- Prepare test cases for each application function.
-- Conduct tests on different devices and browsers to ensure compatibility.
+- Develop test cases for each function of the application.
+- Report and document bugs, along with procedures for fixing them.
 
 ## Deployment and Maintenance:
 
 ### Deployment Plan:
 
-- **Deployment Stages:** Testing on a staging server, deployment to production, monitoring the module’s performance.
-- **Timeline:** Specify dates for testing and full deployment to end-users.
+- **Deployment Stages:** Beta testing, bug fixes, and publishing on user-accessible platforms.
+- **Deadlines:** Setting deadlines for each stage of development.
 
 ### Maintenance Procedures:
 
-- **Technical Support:** Provide an email address or contact form for reporting issues with the module.
-- **Updates:** Regularly add new questions and answers based on user needs and analysis of submitted questions.
+- **Technical Support:** Create a contact channel for users to report issues.
+- **Updates:** Regular updates based on user feedback and emerging needs.
+
+## Schedule:
+
+### Project Plan:
+
+- **Execution Phases:** Divide the project into phases, such as implementing the search function, creating article pages, and testing.
+- **Deadlines:** Estimated time for each phase.
 
 ## Budget:
 
 ### Estimated Costs:
 
-- **Application Development:** Costs for frontend and backend developers, estimated based on hours of work.
-- **Maintenance Costs:** Hosting, technical support, and future updates and additions to the database.
+- **Application Development:** Cost based on the number of hours worked by the development team.
+- **Maintenance Costs:** Costs for servers, databases, updates, and technical support for users.

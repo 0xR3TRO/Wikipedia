@@ -2,106 +2,119 @@
 
 ### Cel:
 
-Projekt "Q&A Section" ma na celu dostarczenie użytkownikom interaktywnego modułu, który można zintegrować ze stroną internetową w celu odpowiadania na najczęściej zadawane pytania. Moduł pozwala na automatyczne udzielanie odpowiedzi, dzięki czemu użytkownicy mogą szybko uzyskać informacje bez potrzeby bezpośredniego kontaktu z obsługą klienta.
+Projekt "Wikipedia Mini" ma na celu dostarczenie użytkownikom uproszczonej wersji popularnego serwisu do wyszukiwania informacji. Aplikacja umożliwia przeglądanie i edytowanie treści encyklopedycznych, dzięki czemu użytkownicy mogą uzyskać szybki dostęp do podstawowych informacji na interesujące ich tematy.
 
 ### Opis funkcji:
 
-- **Baza pytań i odpowiedzi:** Przechowywanie najczęściej zadawanych pytań i odpowiedzi, umożliwiających szybki dostęp do informacji.
-- **Wyszukiwarka pytań:** Użytkownicy mogą przeszukiwać bazę pytań, aby znaleźć interesujące ich informacje.
-- **Personalizacja odpowiedzi:** Możliwość dostosowywania odpowiedzi do specyficznych potrzeb użytkowników za pomocą dynamicznej zawartości.
-- **Analiza pytań:** Moduł analizuje nowe pytania użytkowników i proponuje dodanie ich do bazy, aby aktualizować i ulepszać system.
+- **Wyszukiwanie artykułów:** Użytkownicy mogą wyszukiwać informacje poprzez wpisanie fraz w pasek wyszukiwania.
+- **Przeglądanie artykułów:** Dostęp do różnych kategorii i artykułów związanych z tematami nauki, kultury, historii itp.
+- **Edycja treści:** Możliwość edycji treści artykułów, aby użytkownicy mogli dodawać lub modyfikować informacje.
+- **Historia edycji:** Przegląd i zarządzanie historią edycji artykułów, aby zapewnić transparentność i wiarygodność danych.
 
 ## Analiza wymagań:
 
 ### Wymagania funkcjonalne:
 
-- **Baza pytań i odpowiedzi:** System powinien umożliwiać administratorowi dodawanie, edytowanie i usuwanie pytań i odpowiedzi.
-- **Wyszukiwanie:** Użytkownicy powinni mieć możliwość przeszukiwania dostępnych pytań przy użyciu słów kluczowych.
-- **Personalizacja odpowiedzi:** Możliwość dostosowywania treści odpowiedzi w zależności od kontekstu użytkownika.
-- **Zgłaszanie nowych pytań:** Użytkownicy mogą zgłaszać nowe pytania, które nie są jeszcze w bazie.
+- **Wyszukiwanie artykułów:** Użytkownik może wyszukiwać tematy poprzez wpisanie słów kluczowych.
+- **Przeglądanie kategorii:** Użytkownik ma dostęp do różnych kategorii artykułów, aby łatwiej nawigować po serwisie.
+- **Edycja treści artykułów:** Użytkownicy mogą edytować istniejące artykuły, z zachowaniem historii zmian.
+- **Historia edycji:** Możliwość przeglądania wcześniejszych wersji artykułów i cofania zmian.
 
 ### Wymagania niefunkcjonalne:
 
-- **Responsywność:** Moduł musi działać poprawnie na urządzeniach mobilnych oraz desktopowych.
-- **Wydajność:** Odpowiedzi powinny być udzielane natychmiastowo, aby zaspokoić oczekiwania użytkowników.
-- **Integracja:** Moduł musi być łatwy do zintegrowania z istniejącą stroną internetową, z możliwością dostosowania stylu do designu strony.
+- **Szybkość działania:** System powinien być responsywny, z natychmiastowym dostępem do wyszukiwanych treści.
+- **Skalowalność:** Aplikacja musi być skalowalna, aby obsłużyć rosnącą liczbę użytkowników i artykułów.
+- **Interfejs użytkownika:** Przejrzysty i intuicyjny interfejs, z prostą nawigacją między artykułami i kategoriami.
 
 ## Projekt interfejsu:
 
 ### Szkice/wizualizacje interfejsu:
 
-- _Strona główna Q&A:_ Przegląd najczęściej zadawanych pytań, z widocznym polem wyszukiwania.
-- _Okno wyszukiwania:_ Użytkownicy mogą wpisać pytanie, a system automatycznie zasugeruje odpowiedzi.
-- _Okno zgłaszania pytania:_ Formularz do zgłaszania nowych pytań przez użytkowników, który będzie przetwarzany przez administratora.
+- _Strona główna:_ Pasek wyszukiwania, lista popularnych kategorii oraz wyróżnione artykuły.
+- _Strona artykułu:_ Zawiera treść artykułu, opcję edycji oraz sekcję "Historia edycji".
+- _Strona edycji:_ Formularz do modyfikacji artykułu z podglądem zmian.
 
 ### Mapa strony:
 
-- _Strona główna Q&A_
-  - Lista najczęściej zadawanych pytań
-  - Pole wyszukiwania pytań
-- _Okno zgłaszania pytań_
-  - Formularz zgłoszeniowy dla użytkowników
-  - Przegląd zgłoszonych pytań (dla administratora)
+- _Strona główna_
+  - Pasek wyszukiwania
+  - Lista kategorii
+- _Strona artykułu_
+  - Treść artykułu
+  - Opcja edycji
+  - Historia edycji
+- _Strona edycji_
+  - Formularz edycji artykułu
+  - Podgląd zmian
 
 ## Architektura systemu:
 
 ### Opis struktury danych:
 
-Aplikacja przechowuje dane o pytaniach i odpowiedziach, w tym:
+Aplikacja przechowuje dane związane z artykułami, w tym:
 
-- **Pytania i odpowiedzi:** Zawiera treści pytań oraz odpowiadających im odpowiedzi, z informacjami o dacie dodania i popularności.
-- **Zgłoszone pytania:** Nowe pytania zgłoszone przez użytkowników, które czekają na zatwierdzenie przez administratora.
+- **Artykuły:** Zawiera informacje o treści, kategorii oraz historii zmian.
+- **Historia edycji:** Dane dotyczące wcześniejszych wersji artykułów, w tym kto i kiedy dokonał zmian.
 
 ### Diagramy architektury:
 
-Architektura oparta jest na strukturze Model-Widok-Kontroler (MVC), gdzie:
+Architektura systemu opiera się na podejściu Model-Widok-Kontroler (MVC):
 
-- **Model:** Zarządza danymi pytań i odpowiedzi.
-- **Widok (View):** Prezentuje użytkownikowi interfejs sekcji Q&A.
-- **Kontroler (Controller):** Przetwarza zapytania użytkowników i odpowiada za przeszukiwanie bazy.
+- **Model:** Odpowiada za logikę przechowywania danych i ich przetwarzanie.
+- **Widok (View):** Prezentuje treści encyklopedyczne użytkownikom.
+- **Kontroler (Controller):** Obsługuje interakcje użytkownika, takie jak wyszukiwanie i edycja artykułów.
 
 ## Implementacja:
 
 ### Opis technologii:
 
-- **Frontend:** HTML, CSS, JavaScript (React.js) - interaktywny interfejs użytkownika.
-- **Backend:** Node.js (Express) - obsługa zapytań i przetwarzanie zgłoszeń.
-- **Baza danych:** MongoDB - przechowywanie pytań i odpowiedzi oraz zgłoszeń od użytkowników.
+- **Frontend:** HTML, CSS, JavaScript (React.js) dla interfejsu użytkownika.
+- **Backend:** Django (Python) jako framework obsługujący logikę serwera.
+- **Baza danych:** PostgreSQL do przechowywania artykułów, użytkowników i historii edycji.
 
 ### Struktura kodu:
 
-- _Katalogi/pliki:_ Oddzielne moduły dla frontendu, backendu oraz logiki zarządzania danymi.
-- _Style pisania kodu:_ Zastosowanie praktyk modularności i reużywalności kodu z odpowiednimi komentarzami.
+- _Katalogi/pliki:_ Oddzielne pliki dla widoków, logiki edycji, oraz zarządzania bazą danych.
+- _Style pisania kodu:_ Używanie wzorców modularności, czytelności kodu oraz dokładnych komentarzy.
 
 ## Testowanie:
 
 ### Plan testów:
 
-- **Testy jednostkowe:** Sprawdzenie poprawności wyszukiwania pytań oraz dodawania nowych wpisów do bazy.
-- **Testy integracyjne:** Upewnienie się, że frontend poprawnie komunikuje się z backendem.
-- **Testy interfejsu użytkownika:** Sprawdzenie responsywności interfejsu oraz łatwości nawigacji.
-- **Testy wydajnościowe:** Ocena szybkości udzielania odpowiedzi na zapytania użytkowników.
+- **Testy jednostkowe:** Sprawdzenie poprawności wyszukiwania, edycji artykułów oraz innych podstawowych funkcji.
+- **Testy integracyjne:** Weryfikacja współpracy komponentów frontendowych i backendowych.
+- **Testy interfejsu użytkownika:** Testy związane z interakcją użytkowników na różnych urządzeniach.
+- **Testy wydajnościowe:** Ocena szybkości działania aplikacji, szczególnie w kontekście wyszukiwania i przeglądania artykułów.
 
 ### Procedury testowania:
 
-- Przygotowanie przypadków testowych dla każdej funkcji aplikacji.
-- Przeprowadzenie testów na różnych urządzeniach i przeglądarkach w celu zapewnienia kompatybilności.
+- Opracowanie przypadków testowych dla każdej funkcji aplikacji.
+- Zgłaszanie i dokumentowanie błędów, wraz z procedurami ich naprawy.
 
 ## Wdrożenie i konserwacja:
 
 ### Plan wdrożenia:
 
-- **Etapy wdrażania:** Testowanie modułu na serwerze testowym, wdrożenie na stronę produkcyjną, monitorowanie działania.
-- **Terminy:** Określenie dat testów oraz pełnego wdrożenia dla użytkowników końcowych.
+- **Etapy wdrażania:** Testowanie beta, poprawki błędów, publikacja na platformach dla użytkowników.
+- **Terminy:** Określenie terminów wdrożenia poszczególnych etapów rozwoju.
 
 ### Procedury konserwacji:
 
-- **Wsparcie techniczne:** Udostępnienie adresu e-mail lub formularza kontaktowego do zgłaszania problemów z modułem.
-- **Aktualizacje:** Regularne dodawanie nowych pytań oraz odpowiedzi w zależności od potrzeb użytkowników i analizy zgłaszanych pytań.
+- **Wsparcie techniczne:** Utworzenie kanału kontaktu dla użytkowników zgłaszających problemy.
+- **Aktualizacje:** Regularne aktualizacje na podstawie zgłoszeń użytkowników i pojawiających się potrzeb.
+
+## Harmonogram:
+
+---
+
+### Plan projektu:
+
+- **Etapy realizacji:** Podział projektu na fazy, takie jak implementacja wyszukiwania, tworzenie stron artykułów, testowanie.
+- **Terminy:** Przewidywany czas realizacji dla każdego z etapów.
 
 ## Kosztorys:
 
 ### Szacunkowe koszty:
 
-- **Rozwój aplikacji:** Koszt programistów frontendowych i backendowych, szacowany na podstawie godzin pracy.
-- **Koszty utrzymania:** Hosting, wsparcie techniczne oraz przyszłe aktualizacje i dodawanie nowych pytań do bazy.
+- **Rozwój aplikacji:** Koszt oparty na ilości godzin pracy zespołu programistycznego.
+- **Koszty utrzymania:** Koszty serwerów, bazy danych, aktualizacje, oraz wsparcie techniczne dla użytkowników.
